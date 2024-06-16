@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/css/font-awesome-ie7.css"
+    integrity="sha512-Gyaty1w59WIaT5TGSbAHuVHOoayE3p1R9rWHMDY/RFLRBTsB07rdrKsy4lB5kyajKXsbbuEj3FAoNKiyrm5E0Q==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="images/qr-code.png">
+</head>
+
+
+<body>
+
+    <header>
+        <h1>QR Code</h1>
+    </header>
+
+    <div class="main-container">
+        <div id="qr-code-info" class="container container-front">
+            <main>
+                <header>
+                    <h2>Get Your Own QR Code</h2>
+                    <h4>Generate your own QR code and customise it</h4>
+                </header>
+                <div class="qrInfo">
+                    <form action="">
+                        <label id="text-url">Text/URL 
+                            <input type="text" placeholder="Enter your text/URL here" value="" id="detail">
+                        </label>
+                        <label>Size <br>
+                            <span id="size-val">200 x 200</span>
+                            <input type="range" name="size" id="slider-size" value="200" min="10" max="10000" step="100" >
+                        </label>
+                        <label>Margin <br>
+                            <span id="marg-val">1 px</span>
+                            <input type="range" name="margin" id="slider-marg" value="1" min="0" max="50" >
+                        </label>
+                        
+                        <div class="color">
+                            <label>Color <br>
+                                <input type="color" name="qr-color" id="qr-color" value="#000000" >
+                                <span id="qr-color-val">#000000</span>
+                            </label>
+                            <label>
+                                Background color <br>
+                                <input type="color" name="bg-color" id="bg-color" value="#000000" >
+                                <span id="bg-color-val">#000000</span>
+                            </label>
+                        </div>
+    
+                        <fieldset>
+                            <legend>Image Format</legend>
+                            <label>
+                                <input type="radio" name="img-format" id="jpg">
+                                JPG
+                            </label>
+                            <label>
+                                <input type="radio" name="img-format" id="png" checked>
+                                PNG
+                            </label>
+                            <label>
+                                <input type="radio" name="img-format" id="gif">
+                                GIF
+                            </label>
+                            <label>
+                                <input type="radio" name="img-format" id="svg">
+                                SVG
+                            </label>
+                            <label>
+                                <input type="radio" name="img-format" id="jpeg">
+                                JPEG
+                            </label>
+                        </fieldset>
+                        <button type="submit" id="finalSubmit" disabled>Generate QR Code</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+    
+        <div id="qr-code-result" class="container container-back">
+            <main>
+                <header>
+                    <h2>Your QR code is ready</h2>
+                    <h4>Scan this image to see it in action</h4>
+                </header>
+
+                <img src="" alt="qr-code" id="qr-code-image">
+    
+                <div class="resInfo">
+                    <p>Right click on the image to save it and then click on
+                         <u> SAVE IMAGE AS </u> to download the file </p>
+                    <p>Or want to make changes?</p>
+                    <button type="submit" id="edit">Go Back</button>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
