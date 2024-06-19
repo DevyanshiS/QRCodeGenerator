@@ -71,6 +71,12 @@ const getQrCode = (parameters) =>{
 
 submitButton.addEventListener("click",function(e){
     e.preventDefault();
+
+    if(qrColor.value===backgroundColor.value){
+        alert("The colour of the QR code and background cant be the same");
+        return;
+    }
+    
     console.log("clicked");
     const data = dataInput.value;
     const size = sizeSlider.value;
